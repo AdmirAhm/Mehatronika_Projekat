@@ -1,7 +1,8 @@
 <?xml version='1.0'?>
 <DevRes>
 	<Images>
-		<Res id="export" path="Work/Common/Icons/export48.png"/>
+		<Res id="export" path="Work/Common/Icons/openSave/save.png"/>
+		<Res id="import" path="Work/Common/Icons/openSave/open.png"/>
 	</Images>
 	<Texts>
 		<!--- all from res folder -->

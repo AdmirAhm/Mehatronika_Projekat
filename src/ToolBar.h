@@ -12,31 +12,17 @@ class ToolBar : public gui::ToolBar
     using Base = gui::ToolBar;
 protected:
     gui::Image _imgExport;
-    TBSliderView _sliderView;
+    gui::Image _imgImport;
 public:
     ToolBar()
     : gui::ToolBar("myToolBar", 2, 2)
     , _imgExport(":export")
+    , _imgImport(":import")
     {
         td::WORD i = 0;
-        initItem(i++, tr("speedAndType"), tr("speedAndTypeTT"), &_sliderView);
         initItem(i++, tr("export"), &_imgExport, tr("exportTT"), 20, 0, 0, 10);
+        initItem(i++, tr("import"), &_imgImport, tr("impoetTT"), 20, 0, 0, 20);
     }
     
-    gui::Slider* getSpeedSlider()
-    {
-        return _sliderView.getSlider();
-    }
-    
-    gui::CheckBox* getTextureSwitch()
-    {
-        return _sliderView.getCheckBox();
-    }
-    
-    void forwardMessagesTo(gui::IMessageConsumer* pConsumer)
-    {
-        Base::forwardMessagesTo(pConsumer);
-        _sliderView.forwardMessagesTo(pConsumer);
-    }
     
 };

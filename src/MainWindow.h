@@ -6,7 +6,7 @@
 #include <gui/Window.h>
 #include "MenuBar.h"
 #include "ToolBar.h"
-#include "ViewGLAnimation3DTexture2.h"
+#include "ViewMehatronika.h"
 
 class MainWindow : public gui::Window
 {
@@ -14,7 +14,7 @@ private:
 protected:
     MenuBar _mainMenuBar;
     ToolBar _toolBar;
-    ViewGLAnimation3DTexture2 _viewCubeMap;
+    ViewMehatronika _viewCubeMap;
 public:
     MainWindow()
     : gui::Window(gui::Geometry(50, 50, 1200, 600))
@@ -37,32 +37,18 @@ protected:
             if (actionID == 10)
             {
                 //export to image
-                _viewCubeMap.exportFrame();
+                _viewCubeMap.saveXML();
+                return true;
+            }
+            if (actionID == 20)
+            {
+                //export to image
+                _viewCubeMap.readXML();
                 return true;
             }
         }
         return false;
     }
     
-    bool onChangedValue(gui::Slider* pSlider) override
-    {
-        if (pSlider == _toolBar.getSpeedSlider())
-        {
-            double val = pSlider->getValue();
-            _viewCubeMap.updateSpeed((float)val);
-            return true;
-        }
-        return false;
-    }
-    
-    bool onClick(gui::CheckBox* pBtn) override
-    {
-        if (pBtn == _toolBar.getTextureSwitch())
-        {
-            _viewCubeMap.switchTexture();
-            return true;
-        }
-        return false;
-    }
     
 };

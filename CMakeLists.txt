@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.18)
 
-set(SOLUTION_NAME testGLAnimation3DTexture2)	#Unijeti naziv solution-a
+set(SOLUTION_NAME Mehatronika)	#Unijeti naziv solution-a
 
 #BEGIN dio koji ide u sve solutions
 project(${SOLUTION_NAME})
@@ -17,4 +17,4 @@ include(${WORK_ROOT}/DevEnv/DataProvider.cmake)
 include(${WORK_ROOT}/DevEnv/natGUI.cmake)
 include(${WORK_ROOT}/DevEnv/natGL.cmake)
 
-include(testGLAnimation3DTexture2.cmake)
+include(Mehatronika.cmake)
